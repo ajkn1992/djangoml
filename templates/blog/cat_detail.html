@@ -7,16 +7,16 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.summary|truncatewords:30|linebreaks }}</p>
+                        <p class="card-text">{{ post.summary }}</p>
                     </div>
 
                     <div class="card-footer">
-                        <small class="text-muted">{{ post.publish | date:'jS F Y' }}
+                        <h6 class="text-muted">{{ post.publish | date:'jS F Y' }}
                             |
                             <a href="{{ post.category.get_absolute_url }}">{{ post.category.name|title }}</a>
-                        </small>
-                        <a href="{{ post.get_absolute_url }}"
-                           class="btn btn-outline-dark float-right">Read More</a>
+                            |
+                            <a href="{{ post.get_absolute_url }}">Read More</a>
+                        </h6>
                     </div>
                 </div>
             </div>
