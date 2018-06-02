@@ -1,0 +1,14 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            {% if page.has_previous %}
+                <a class="page-item" href="?page={{ page.previous_page_number }}" tabindex="-1">Previous</a>
+            {% endif %}
+        </li>
+        <li class="page-item">
+            {% if page.has_next %}
+                <a class="page-item" href="?page={{ page.next_page_number }}">Next</a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>

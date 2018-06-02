@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card-deck">
+        {% for post in cat_posts %}
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.summary|truncatewords:30|linebreaks }}</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <small class="text-muted">{{ post.publish | date:'jS F Y' }}
+                            |
+                            <a href="{{ post.category.get_absolute_url }}">{{ post.category.name|title }}</a>
+                        </small>
+                        <a href="{{ post.get_absolute_url }}"
+                           class="btn btn-outline-dark float-right">Read More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
